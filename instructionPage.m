@@ -70,8 +70,6 @@ function instructionPage(outwindow, rect, text_color, shapes)
     
     DrawFormattedText(outwindow, ['In the lower bar, place the correct number in the box under each symbol according to the codes above'], ...
                       'center', text_size_small*6 ,white, 0);
-    DrawFormattedText(outwindow, ['Use your keyboard to enter the numbers'], ...
-                      'center', text_size_small*7 ,white, 0);
     
     Screen('Flip', outwindow, [], 1);
     WaitSecs(1);
@@ -98,10 +96,22 @@ function instructionPage(outwindow, rect, text_color, shapes)
     % ------------------------------------------------------------------- %
     
     Screen('TextSize', outwindow, text_size);
-    DrawFormattedText(outwindow, 'Please work as quickly and accurately as you can', 'center', round(rect(4)/3), white);
-    DrawFormattedText(outwindow, 'You will have ONE MINUTE to complete as many as you can.', 'center', round(rect(4)/3) + 2*text_size, white);
+    DrawFormattedText(outwindow, 'Please work as quickly and accurately as you can.', ...
+                      'center', round(rect(4)/4), white);
+    DrawFormattedText(outwindow, 'You have 1 MIN to complete as many patterns as you can.', ...
+                      'center', round(rect(4)/4) + 2*text_size, white);
+    DrawFormattedText(outwindow, 'Use your keyboard to enter the digits.', ...
+                      'center', round(rect(4)/4) + 4*text_size , white);
+    DrawFormattedText(outwindow, 'Work from left to right starting with the very first left shape.', ...
+                      'center', round(rect(4)/4) + 6*text_size , white);
+    DrawFormattedText(outwindow, 'Be careful, you cannot correct an answer.', ...
+                      'center', round(rect(4)/4) + 8*text_size , white);
+    DrawFormattedText(outwindow, 'A serie is considered correct if ALL the shapes are matched correctly.', ...
+                      'center', round(rect(4)/4) + 10*text_size , white);
+    
     Screen('TextSize', outwindow, text_size_small);
-    DrawFormattedText(outwindow, ['Press enter to continue'], 'center', 3*round(rect(4)/4), white);
+    DrawFormattedText(outwindow, 'Press enter to continue', ...
+                      'center', round(rect(4)/4) + 12*text_size, white);
     Screen('Flip', outwindow);
     
     waitForEnter;

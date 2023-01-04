@@ -22,13 +22,15 @@ text_color = [255 255 255];
 
 % Call all of your screens
 screens = Screen('Screens');
-% Change the value of the screenNumber variable to get the test displayed on a differet screen
+% Change the value of the screenNumber variable to get the test displayed 
+% on a differet screen
 screen_number = max(screens);
 % get dimension of the screen and draw window
 [outwindow, rect] = Screen('OpenWindow', screen_number, back_color);
 
 % Specify ground truth of shapes
-true_shapes = ["circle", "moon", "triangle", "lightning", "square", "cross", "hat", "equal" ];
+true_shapes = ["circle", "moon", "triangle", "lightning", "square", 
+    "cross", "hat", "equal" ];
 
 % getDevices = PsychHID('Devices');
 KbName('UnifyKeyNames');
