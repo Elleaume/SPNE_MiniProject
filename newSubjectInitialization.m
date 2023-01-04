@@ -12,5 +12,6 @@ function data = newSubjectInitialization
     while isempty(data.gender) | ~(data.gender == 'f' | data.gender == 'm')
         data.gender = input('The entered value is not correct. Please enter m for male or f for female: ', 's');
     end
+    disp('Experiment ready to start!')
 end
 
