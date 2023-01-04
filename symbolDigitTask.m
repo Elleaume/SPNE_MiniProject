@@ -1,7 +1,9 @@
-function success = symbolDigitTask(outwindow, rect, text_color, true_shapes)
+function [success_series, n_success, n_miss_match] = symbolDigitTask(outwindow, rect, text_color, true_shapes)
     
     % Keep track of success of the subject
-    success = [];
+    success_series = [];
+    n_success = 0;
+    n_miss_match = 0;
     % Maximum time to complete the task
     stop = 60;
     
@@ -91,10 +93,16 @@ function success = symbolDigitTask(outwindow, rect, text_color, true_shapes)
         end
     
         if length(subject_labels) == n_symbols
-            success = [success, all(subject_labels == indexes)];
+            success_series = [success_series, all(subject_labels == indexes)];
+            n_success = n_success + sum(subject_labels==indexes) ;
+            n_miss_match = n_miss_match + sum(subject_labels~=indexes);
         else
-            success = [success, 0];
+            success_series = [success_series, 0];
             Screen('Flip', outwindow, [], 0);
+            if length(subject_labels) > 0 
+                n_success = n_success + sum(subject_labels==indexes(1:length(subject_labels))) ;
+                n_miss_match = n_miss_match + sum(subject_labels~=indexes(1:length(subject_labels)));
+            end
         end
     end
 end

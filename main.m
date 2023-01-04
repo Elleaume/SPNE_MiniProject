@@ -29,7 +29,7 @@ screen_number = max(screens);
 [outwindow, rect] = Screen('OpenWindow', screen_number, back_color);
 
 % Specify ground truth of shapes
-true_shapes = ["circle", "moon", "triangle", "lightning", "square", 
+true_shapes = ["circle", "moon", "triangle", "lightning", "square", ...
     "cross", "hat", "equal" ];
 
 % getDevices = PsychHID('Devices');
@@ -49,9 +49,12 @@ loadingPage(outwindow, rect);
 
 % ---------------------------- Start Task! ------------------------------ %
 
-success = symbolDigitTask(outwindow, rect, text_color, true_shapes);
-data.overallScore = sum(success);
-data.nTrial = length(success);
+[success_series, n_success, n_miss_match] = symbolDigitTask(outwindow, rect, text_color, true_shapes);
+
+data.n_successfull_serie = sum(success_series);
+data.n_trial = length(success_series);
+data.n_success = n_success;
+data.n_miss_match = n_miss_match;
 % ---------------------------- End Page --------------------------------- %
 
 endingPage(outwindow, rect);
@@ -61,3 +64,12 @@ endingPage(outwindow, rect);
 WaitSecs(5);
 
 Screen('CloseAll')
+
+%writetable(struct2table(data), 'results/data.csv')
+
+% Save the new results
+previous_data = readtable('results/data.csv');
+overall_data = [previous_data;struct2table(data)];
+writetable(overall_data, 'results/data.csv')
+
+
