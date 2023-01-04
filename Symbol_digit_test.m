@@ -32,6 +32,9 @@ max_y = max_x/n_symbols*2;
 tree = max_y/2 *0.7;
 
 TextSize = 60;
+while KbCheck; end
+%getDevices = PsychHID('Devices');
+KbName('UnifyKeyNames');
 
 % ----------------------------- Draw Grid ------------------------------- %
 
@@ -39,7 +42,8 @@ drawGrid(x, y, outwindow , n_symbols, max_x , max_y)
 
 % ---------------------------- Draw Shapes ------------------------------ %
 shapes = ["circle", "square", "triangle", "equal", "cross", "hat", "moon", "lightning"];
-[shapes, indexes] = shuffle(shapes);
+% Store reference table
+[true_shapes, true_indexes] = shuffle(shapes);
 for i = 1:n_symbols
     drawShape(shapes(i), i-5, x, y, outwindow , n_symbols, max_x , max_y, tree);
 end
@@ -56,7 +60,7 @@ for i = 1:n_symbols
 end
 
 
-% ----------------------------- 2nd Gird -------------------------------- %
+% ----------------------------- 2nd Grid -------------------------------- %
 x = rect(3)/2;
 y = 3*rect(4)/4;
 
@@ -69,22 +73,33 @@ end
 
 % ---------------------- Subject enter Numbers -------------------------- %
 Screen('Flip', outwindow, [], 1);
+tic();
+successes = [];
+subject_labels = [];
 for i= 1:n_symbols
     keyIsDown = 0;
-    while ~keyIsDown
-        [keyIsDown, seconds, keyCode] = KbCheck;
+
+    while ~keyIsDown & toc() < 60
+        [keyIsDown, seconds, keyCode] = KbCheck();
         if keyIsDown
-            find(keyCode)
+            code = KbName([keyCode]);
+            subject_labels = [subject_labels, str2num(code(1))];
             [~, ~] = Screen('TextFont', outwindow, 'Arial');
             Screen('TextSize', outwindow, TextSize);
             color  = TextColor;
             posY   = y + max_y/2 - TextSize/2; 
             posX   = x + (max_x/(n_symbols/2))*(i-5) + max_y/3;
-            Screen('DrawText', outwindow, int2str(find(keyCode)), posX, posY, color);  
+            Screen('DrawText', outwindow, code(1), posX, posY, color);  
             Screen('Flip', outwindow, [], 1);
+            
+            keyIsDown = 0;
+            WaitSecs(0.2);
+            break
         end
     end
 end
+
+successes = [successes all(subject_labels == indexes)]
 
 WaitSecs(4);
 
@@ -96,5 +111,23 @@ Screen('CloseAll')
 
 %%
 Screen('CloseAll')
+
+%%
+getDevices = PsychHID('Devices');
+
+for device = getDevices 
+    if device.usageName == "Keyboard"
+        disp(device.product )
+        disp(device.index)
+    end
+end
+
+
+
+
+
+
+
+
 
 
