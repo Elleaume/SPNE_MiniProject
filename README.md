@@ -18,15 +18,17 @@ The experiment is supposed to run as follows after some explanations given at th
 - The participant must enter from left to right the numbers corresponding to the shapes using the first table.  
 - When a table is completed it is replaced by another one re-shuffled.  
 - The participant must complete as many tables as possible within a minute. 
-- The scores are saved and store in the results folder.
+- The scores are saved and store in the results folder. We obtain as output a csv file containing a compilation of the data of the subjects having carried out the test containing the information entered at the beginning (age, sex and subject number) and the results of the test (number of tables attempted during the experiment, number of series completed correctly, total number of symbols found, total number of miss-matches).
 
 ## Usage
 
 run the __main.m__ file in Matlab to lunch the experiment.
 
-- You will be ask to first enter some information about the subject in the CommandWindow of Matlab.
-- Then a Psychtoolbox window will appear.
-- Let yourself be guided by the instructions.
+- You will be ask to first enter some information about the subject in the __CommandWindow__ of Matlab.
+- Then a Psychtoolbox window will appear (If you have an external monitor, the window will appear on it).
+- Let yourself be guided by the instructions. Press enter to go from one page to the next when the animations are done.
+- You will start the test. You have to use your keyboard (that is built-in the computer) to enter the digits from left to right. You have to enter an answer for each symbol in the correct order and cannot correct an answer. You are asked to work as fast as possible and to complete as many grids as possible. 
+- After one minute the test will end by itself and the window will close. 
 
 ## References
 
