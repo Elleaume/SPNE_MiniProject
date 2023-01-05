@@ -9,7 +9,7 @@ This project requires the use of Psychtoolbox.
 
 ## Purpose of the experiment
 
-The participants are presented with one grid linking symbols to single-digit integers and a second grid containing only the symbols. They are then asked to indicate the numbers attached to each of the symbols in the second grid using the first one as a key. This test is used in neuropsychology as it is sensitive to age, brain damage, dementia etc. [1]
+The participants are presented with one grid linking symbols to single-digit integers and a second grid containing only the symbols. They are then asked to indicate the numbers attached to each of the symbols in the second grid using the first one as a key. This test is used in neuropsychology as it is sensitive to age, brain damage, dementia etc. [[1]](#1)
 
 ## What to expect
 The experiment is supposed to run as follows after some explanations given at the beginning of the experiment (press enter to move from one page to the next) :
@@ -33,9 +33,6 @@ run the __main.m__ file in Matlab to lunch the experiment.
 This test is supposed to mimic the symbol digit substitution experiment conducted in the UK BioBank and introduced in 2016 at the Imaging Clinics, on which I rely in my PhD work. 
 More information about this test here : https://biobank.ndph.ox.ac.uk/ukb/refer.cgi?id=5021. 
 
- [[1]](#1).
-
-## References
 <a id="1">[1]</a> 
 Hoyer William (2004). 
 Adult Age and Digit Symbol Substitution Performance: A Meta-Analysis.
