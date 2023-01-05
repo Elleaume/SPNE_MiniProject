@@ -29,6 +29,7 @@ run the __main.m__ file in Matlab to lunch the experiment.
 - Let yourself be guided by the instructions. Press enter to go from one page to the next when the animations are done.
 - You will start the test. You have to use your keyboard (that is built-in the computer) to enter the digits from left to right. You have to enter an answer for each symbol in the correct order and cannot correct an answer. You are asked to work as fast as possible and to complete as many grids as possible. 
 - After one minute the test will end by itself and the window will close. 
+- Your results will be added to the csv file in the results folder.
 
 ## References
 
