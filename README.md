@@ -18,7 +18,7 @@ The experiment is supposed to run as follows after some explanations given at th
 - The participant must enter from left to right the numbers corresponding to the shapes using the first table.  
 - When a table is completed it is replaced by another one re-shuffled.  
 - The participant must complete as many tables as possible within a minute. 
-- The scores are saved and store in the results folder. We obtain as output a csv file containing a compilation of the data of the subjects having carried out the test containing the information entered at the beginning (age, sex and subject number) and the results of the test (number of tables attempted during the experiment, number of series completed correctly, total number of symbols found, total number of miss-matches).
+- We obtain as output a csv file  in the results folder containing a compilation of the data of the subjects having carried out the test containing the information entered at the beginning (age, sex and subject number) and the results of the test (number of tables attempted during the experiment, number of series completed correctly, total number of symbols found, total number of miss-matches).
 
 ## Usage
 
