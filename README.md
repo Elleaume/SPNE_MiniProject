@@ -30,8 +30,7 @@ run the __main.m__ file in Matlab to lunch the experiment.
 
 ## References
 
-This test is supposed to mimic the symbol digit substitution experiment conducted in the UK BioBank and introduced in 2016 at the Imaging Clinics, on which I rely in my PhD work. 
-More information about this test here : https://biobank.ndph.ox.ac.uk/ukb/refer.cgi?id=5021. 
+This test is mimicking the symbol digit substitution experiment conducted in the UK BioBank and introduced in 2016 at the Imaging Clinics, on which I rely in my PhD work (https://biobank.ndph.ox.ac.uk/ukb/refer.cgi?id=5021). 
 
 <a id="1">[1]</a> 
 Hoyer William (2004). 
