@@ -7,6 +7,8 @@ function waitForEnter()
             key = KbName([key_code])
             if key == 'Return'
                 break
+            else
+                waitForEnter()
             end
         end
     end

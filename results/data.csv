@@ -2,3 +2,5 @@ nr,age,gender,n_successfull_serie,n_trial,n_success,n_miss_match
 1,26,f,3,5,33,1
 55,45,m,4,5,36,0
 12,23,f,5,6,41,0
+517,23,f,2,4,28,3
+23,23,m,3,5,29,3
